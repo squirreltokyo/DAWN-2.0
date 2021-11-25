@@ -58,6 +58,7 @@
         "663f0dea-9540-4168-9da2-50da280194f7": {
           "type": "image",
           "settings": {
+            "image": "{{ product.metafields.my_fields.addtional_image.value }}"
           }
         }
       },
