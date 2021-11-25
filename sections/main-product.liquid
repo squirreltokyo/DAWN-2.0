@@ -108,8 +108,8 @@
                 </div>
               {%- endif -%}
           {%- when 'image' -%}
-            {%- if product.metafields.my_fields.addtional_image != blank -%}
-              <img src="{{ product.metafields.my_fields.addtional_image | img_url: '400x'}}" alt="{{ product.metafields.my_fields.addtional_image.alt }}" width="{{ product.metafields.my_fields.addtional_image.width }}" height="{{ product.metafields.my_fields.addtional_image.height }}" loading="lazy">
+            {%- if block.settings.image != blank -%}
+              <img src="{{ block.settings.image | img_url: '400x'}}" alt="{{ block.settings.image.alt }}" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}" loading="lazy">
             {%- endif -%}
           {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
@@ -603,7 +603,14 @@
     {
       "type": "image",
       "name": "image",
-      "limit": 1
+      "limit": 1,
+      "settings" : [
+        {
+          "id": "image",
+          "label": "image",
+          "type": "image_picker"
+        }
+      ]
     },
     {
       "type": "quantity_selector",
